@@ -1,24 +1,33 @@
-# README
+# <GatheringOfAdventurers>
+​
+## サイト概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### サイトテーマ
+ - オンラインゲームをする際にフレンドを募集するサイトです。
+ - 分類はコミュニティサイトになります。
+​
+### テーマを選んだ理由
+ - このテーマにした理由ですが、実際にオンラインゲームをする際に
+ - 一人でするよりみんなでやった方が楽しいからです。
+ - 難点としまして、簡単にフレンドが見つからないのが現状なので
+ - 簡単にフレンドが見つかるようにしたい為です。
+​
+### ターゲットユーザ
+ - オンラインゲームが初めての方
+ - 同じ目的でゲームをしたい方
+ - 通話をしながらゲームをしたい方
+​
+### 主な利用シーン
+ - オンラインゲームのフレンドが欲しい時
+ - 同じ目的を探している時
+ - お話をしながらゲームをしたい時
+​
+## 設計書
+<!--テーマを設定・提出する時点では不要です-->
+​
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
