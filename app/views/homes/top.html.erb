@@ -1,23 +1,19 @@
-<main>
-        <p id="notice"></p>
-        <div class="container">
+<div class="container">
   <div class="row">
-    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-      <h1>welcome to <i class="fas fa-book" aria-hidden="true"></i><strong>Bookers</strong>  !!</h1>
-      <p>In  <i class="fas fa-book" aria-hidden="true"></i><strong>Bookers</strong>, </p>
-      <p>you can share and exchange  your opinions , inpressions , and emotions</p>
-      <p> about various books!</p>
+    <div class='mx-auto'>
+      <h2>ようこそ！！Gathering-Of-Adventurers</h2><br><br>
+      <p>ここはオンラインゲームのフレンドを募集する場所になります</p>
+      <p>ルールやマナーを守り、このサイトをご活用ください</p><br>
       <div class="btn-wrapper col-10 mx-auto">
         <div class="row">
-          <%= link_to "Log in", new_user_session_path, class:"btn btn-info btn-sm btn-block mb-3" %>
-        </div>
+          <p>新規登録がお済みの方はこちら</p>
+          <%= link_to 'ログイン',new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+        </div><br>
+        <p>新規登録がお済みではない方はこちら</p>
         <div class="row">
-          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-success btn-sm btn-block" %>
+          <%= link_to '新規登録',new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-      </main>

@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get 'recruitments/show'
   devise_for :users
   root "homes#top"
-    get 'homes/about'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+ get "home/about"=>"homes#about"
+ # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
