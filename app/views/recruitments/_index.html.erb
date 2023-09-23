@@ -1,2 +1,24 @@
-<h1>Recruitments#index</h1>
-<p>Find me in app/views/recruitments/index.html.erb</p>
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>タイトル</th>
+      <th>本文</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% recruitments.each do |recruitment| %>
+      <tr>
+        <td><%= link_to(recruitment.user) do %>
+          <%= image_tag recruitment.user.get_profile_image, size:'50x50' %>
+          <% end %>
+        </td>
+        <td><%= link_to recruitment.title,recruitment, class: "recruitment_#{recruitment.id}" %></td>
+        <td><%= recruitment.body %></td>
+        <td><%= render "favorites/btn", recruitment: recruitment %></td>
+        <td>コメント数: <%= recruitment.recruitment_comments.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

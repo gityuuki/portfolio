@@ -3,7 +3,8 @@ class RecruitmentCommentsController < ApplicationController
     recruitment = Recruitment.find(params[:recruitment_id])
     comment = current_user.recruitment_comments.new(recruitment_comment_params)
     comment.recruitment_id = recruitment.id
-    comment.save
+    #pp "hoge"
+    comment.save!
     redirect_to request.referer
   end
 

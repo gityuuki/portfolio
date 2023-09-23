@@ -4,7 +4,7 @@ class RecruitmentsController < ApplicationController
 
   def index
     @recruitments = Recruitment.all
-    @recruitment = Book.new
+    @recruitment = Recruitment.new
   end
 
   def create
