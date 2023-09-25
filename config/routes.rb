@@ -11,7 +11,9 @@ Rails.application.routes.draw do
      get 'followers' => 'relationships#followers', as: 'followers'
   end
   root "homes#top"
- get "home/about"=>"homes#about"
- get '/homes/guest_login', to: 'homes#guest_login'
+  get "home/about"=>"homes#about"
+  get '/homes/guest_login', to: 'homes#guest_login'
+  get "search" => "searches#search"
+
  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
