@@ -1,8 +1,8 @@
 <table class='table'>
   <thead>
     <tr>
-      <th>image</th>
-      <th>name</th>
+      <th>アイコン</th>
+      <th>ユーザー名</th>
       <th></th>
       <th></th>
       <th></th>
@@ -25,7 +25,7 @@
             <% end %>
           <% end %>
         </td>
-        <td><%= link_to 'Show', user, class: "user_#{user.id}" %></td>
+        <td><%= link_to '詳細ページ', user, class: "user_#{user.id}" %></td>
         <% if current_user.is_admin == true %>
          <td><%= link_to '退会ボタン', user, class: "user_#{user.id}" %></td>
          <% end %>
