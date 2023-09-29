@@ -1,10 +1,10 @@
 <div class='container'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-  		<h1>ユーザー情報変更</h1>
-    	<%#= render 'layouts/errors', obj: @recruitment %>
-  		<%#= render 'form', recruitment: @recruitment %>
-  		<%#= link_to 'Show', @recruitment, class: "recruitment_#{@recruitment.id}" %> |
-  		<%#= link_to 'Back', recruitments_path, class: "back" %>
+  		<h1>投稿情報を編集</h1>
+    	<%= render 'layouts/errors', obj: @recruitment %>
+  		<%= render 'form', recruitment: @recruitment %>
+  		<%= link_to 'Show', @recruitment, class: "recruitment_#{@recruitment.id}" %> |
+  		<%= link_to 'Back', recruitments_path, class: "back" %>
   </div>
 </div>

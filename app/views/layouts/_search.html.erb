@@ -1,10 +1,20 @@
 <% if user_signed_in? %>
-  <div class="search_form">
+  <div class="search_form d-flex justify-content-center mt-3">
     <%= form_with url: search_path, local: true, method: :get do |f| %>
-      <%= f.text_field :word %>
-      <%= f.select :range, options_for_select([['User'], ['Recruitment']]) %>
-      <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
-      <%= f.submit "検索", class: "btn btn-primary" %>
+      <div>
+        <%= f.select :range, options_for_select([['ユーザー'], ['募集']]) %>
+        <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
+      </div>
+      <div class="row">
+        <div>
+          <%= f.text_field :word, class: "form-control" %>
+        </div>
+        <div>
+          <%= button_tag type: "submit", class: "btn btn-light" do %>
+            <i class="fa-solid fa-magnifying-glass" style="color: #FF8C00;"></i>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
 <% end %>

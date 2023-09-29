@@ -1,21 +1,17 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
-    <div class='mx-auto'>
-      <h2>ようこそ！！Gathering-Of-Adventurers</h2><br><br>
-      <p>ここはオンラインゲームのフレンドを募集する場所になります</p>
-      <p>ルールやマナーを守り、このサイトをご活用ください</p><br>
+    <div class='mx-auto text-center'>
+      <h2 class="mb-4">ようこそ！！<br>Gathering of Adventurers</h2>
+      <p>ここはオンラインゲームのフレンドを募集する場所になります<br>ルールやマナーを守り、このサイトをご活用ください</p>
       <div class="btn-wrapper col-10 mx-auto">
-        <div class="row">
-          <p>新規登録がお済みの方はこちら</p>
-          <%= link_to 'ログイン',new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
-        </div><br>
-        <p>新規登録がお済みではない方はこちら</p>
-        <div class="row">
-          <%= link_to '新規登録',new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+        <div>
+          <%= link_to 'ログイン',new_user_session_path, class: "btn btn-primary btn-sm btn-block mt-5" %>
         </div>
-         <p>ゲストログインはこちらから</p>
-          <div class="row">
-            <%= link_to 'ゲストログイン',homes_guest_login_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+        <div>
+          <%= link_to '無料会員登録はこちら',new_user_registration_path, class: "btn btn-secondary btn-sm btn-block mt-3 mb-5" %>
+        </div>
+          <div>
+            <%= link_to 'ゲストログイン',homes_guest_login_path, class: "btn btn-warning btn-sm btn-block my-3" %>
           </div>
       </div>
     </div>

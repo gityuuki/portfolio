@@ -1,5 +1,7 @@
 class RecruitmentsController < ApplicationController
+
   def edit
+    @recruitment = Recruitment.find(params[:id])
   end
 
   def index
@@ -24,16 +26,19 @@ class RecruitmentsController < ApplicationController
   end
 
   def update
+      @recruitment = Recruitment.find(params[:id])
     if @recruitment.update(recruitment_params)
-      redirect_to recruitment_path(@recruitment), notice: "You have updated book successfully."
+      redirect_to recruitment_path(@recruitment), notice: "更新しました"
     else
+      flash[:alert] = "更新に失敗しました"
       render "edit"
     end
   end
 
   def destroy
+    @recruitment = Recruitment.find(params[:id])
     @recruitment.destroy
-    redirect_to recruitments_path
+    redirect_to recruitments_path, notice: "投稿削除しました"
   end
 
   private

@@ -3,9 +3,12 @@ class RecruitmentCommentsController < ApplicationController
     recruitment = Recruitment.find(params[:recruitment_id])
     comment = current_user.recruitment_comments.new(recruitment_comment_params)
     comment.recruitment_id = recruitment.id
-    #pp "hoge"
-    comment.save!
-    redirect_to request.referer
+    if comment.save
+      redirect_to request.referer, notice: "コメントを投稿しました"
+    else
+      flash[:alert] = "コメントの投稿に失敗しました"
+      redirect_to request.referer
+    end
   end
 
   def destroy
