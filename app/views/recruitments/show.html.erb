@@ -20,8 +20,8 @@
           <td><%= render "favorites/btn", recruitment: @recruitment %></td>
           <td>コメント数: <%= @recruitment.recruitment_comments.count %></td>
           <% if @recruitment.user == current_user %>
-            <td><%= link_to 'Edit', edit_recruitment_path(@recruitment), class: "btn btn-sm btn-success edit_recruitment_#{@recruitment.id}" %></td>
-            <td><%= link_to 'Destroy', recruitment_path, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_recruitment_#{@recruitment.id}"%></td>
+            <td><%= link_to '編集', edit_recruitment_path(@recruitment), class: "btn btn-sm btn-success edit_recruitment_#{@recruitment.id}" %></td>
+            <td><%= link_to '削除', recruitment_path, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_recruitment_#{@recruitment.id}"%></td>
           <% end %>
         </tr>
       </table>
