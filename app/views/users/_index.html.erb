@@ -26,9 +26,9 @@
           <% end %>
         </td>
         <td><%= link_to '詳細ページ', user, class: "user_#{user.id}", class: "btn btn-success pull-right btn-sm" %></td>
-        <% if current_user.is_admin == true %>
-         <td><%= link_to '退会ボタン', user, class: "user_#{user.id}", class: "btn btn-danger pull-right btn-sm" %></td>
-         <% end %>
+        <% if current_user.is_admin? && !user.is_admin && !user.is_guest? %>
+         <td><%= link_to '退会ボタン', withdrawal_path(user.id), method: :post, class: "user_#{user.id}", class: "btn btn-danger pull-right btn-sm", data: { confirm: "【確認】アカウントを削除してもよろしいですか？" } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

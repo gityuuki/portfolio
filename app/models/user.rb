@@ -39,6 +39,10 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
+  
+  def is_guest?
+    email == "guest@example.com"
+  end
 
   def self.looks(search, word)
     if search == "perfect_match"

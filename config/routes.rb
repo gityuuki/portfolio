@@ -10,6 +10,7 @@ Rails.application.routes.draw do
      get 'followings' => 'relationships#followings', as: 'followings'
      get 'followers' => 'relationships#followers', as: 'followers'
   end
+  post 'users/withdrawal/:user_id', to: 'users#withdrawal', as: 'withdrawal'
   root "homes#top"
   get "home/about"=>"homes#about"
   get '/homes/guest_login', to: 'homes#guest_login'

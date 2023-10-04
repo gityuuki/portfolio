@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.where(is_withdrawal: false)
     @recruitment = Recruitment.new
   end
 
@@ -25,11 +25,11 @@ class UsersController < ApplicationController
   end
 
   def withdrawal
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @user.update(is_withdrawal: true)
-    reset_session
-      flash[:notice] = "退会しました。"
-    redirect_to root_path
+    # reset_session
+      flash[:notice] = "退会完了いたしました。"
+    redirect_to users_path
   end
 
   private

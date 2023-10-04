@@ -11,7 +11,7 @@
         </td>
         <td><%= recruitment_comment.comment %></td>
         <td>
-          <% if recruitment_comment.user == current_user %>
+          <% if (recruitment_comment.user == current_user || current_user.is_admin?) %>
             <%= link_to "削除", recruitment_recruitment_comment_path(recruitment, recruitment_comment), method: :delete, class: "btn btn-danger pull-right btn-sm" %>
           <% end %>
         </td>
