@@ -11,8 +11,12 @@ class RecruitmentsController < ApplicationController
 
   def create
     @recruitment = Recruitment.new(recruitment_params)
+    tags = Vision.get_image_data(list_params[:image])
     @recruitment.user_id = current_user.id
     if @recruitment.save
+      tags.each do |tag|
+        @recruitment.tags.create(name: tag)
+      end
       redirect_to recruitment_path(@recruitment), notice: "You have created book successfully."
     else
       @recruitments = Recruitment.all

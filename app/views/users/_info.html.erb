@@ -1,12 +1,22 @@
 <table class='table'>
   <tr><%= image_tag user.get_profile_image, size:'150x150' %></tr>
   <tr>
+    <th></th>
+    <td>
+      <div class="tag-box">
+      <% user.tags.each do |tag| %>
+        <span class="label" style="font-size:0.72em;background-color:lightGray;display:inline-block;border-radius:3px;padding:4px 8px;"><%= tag.name %></span>
+      <% end %>
+      </div>
+    </td>
+  </tr>
+  <tr>
 	  <th>ユーザー名</th>
-	  <th><%= user.name %></th>
+	  <td><%= user.name %></td>
   </tr>
   <tr>
 	  <th>自己紹介文</th>
-	  <th><%= user.introduction %></th>
+	  <td><%= user.introduction %></td>
   </tr>
   <tr>
     <th>フォローの数</th>

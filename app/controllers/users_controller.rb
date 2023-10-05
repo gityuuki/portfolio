@@ -18,7 +18,12 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: "You have updated user successfully."
+      tags = Vision.get_image_data(params[:user][:profile_image])
+      @user.tags.destroy_all
+      tags.each do |tag|
+        @user.tags.create(name: tag)
+      end
+      redirect_to user_path(@user), notice: "更新できました。"
     else
       render "edit"
     end
