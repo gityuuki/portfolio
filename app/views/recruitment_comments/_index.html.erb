@@ -1,16 +1,16 @@
-<table>
+<table class = "w-100">
   <tbody>
       <% recruitment.recruitment_comments.each do |recruitment_comment| %>
-      <tr>
+      <tr class = "w-100">
 
-        <td>
+        <td class = "col-100px">
           <%= link_to user_path(recruitment_comment.user) do %>
-            <%= image_tag recruitment_comment.user.get_profile_image, size: "100x100" %><br>
-            <%= recruitment_comment.user.name %>
+            <%= image_tag recruitment_comment.user.get_profile_image, size: "50x50" %><br>
+            <span class = "font-small"><%= recruitment_comment.user.name %></span>
           <% end %>
         </td>
-        <td><%= recruitment_comment.comment %></td>
-        <td>
+        <td><div class = "hukidasi"><%= recruitment_comment.comment %></div></td>
+        <td class = "col-60px">
           <% if (recruitment_comment.user == current_user || current_user.is_admin?) %>
             <%= link_to "削除", recruitment_recruitment_comment_path(recruitment, recruitment_comment), method: :delete, class: "btn btn-danger pull-right btn-sm" %>
           <% end %>
