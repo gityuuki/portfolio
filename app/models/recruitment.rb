@@ -12,15 +12,15 @@ class Recruitment < ApplicationRecord
 
   def self.looks(search, word)
     if search == "perfect_match"
-      @recruitment = Recruitment.where("title LIKE?","#{word}")
+      Recruitment.where("title LIKE ?","#{word}")
     elsif search == "forward_match"
-      @recruitment = Recruitment.where("title LIKE?","#{word}%")
+      Recruitment.where("title LIKE ?","#{word}%")
     elsif search == "backward_match"
-      @recruitment = Recruitment.where("title LIKE?","%#{word}")
+      Recruitment.where("title LIKE ?","%#{word}")
     elsif search == "partial_match"
-      @recruitment = Recruitment.where("title LIKE?","%#{word}%")
+      Recruitment.where("title LIKE ?","%#{word}%")
     else
-      @recruitment = Recruitment.all
+      Recruitment.all
     end
   end
 

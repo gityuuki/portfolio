@@ -2,12 +2,12 @@ class SearchesController < ApplicationController
   before_action :authenticate_user!
 
   def search
-    @range = params[:range]
+    @range = params["range"]
 
-    if @range == "User"
-      @users = User.looks(params[:search], params[:word])
+    if @range == "ユーザー"
+      @users = User.looks(params["search"], params["word"])
     else
-      @recruitments = Recruitment.looks(params[:search], params[:word])
+      @recruitments = Recruitment.looks(params["search"], params["word"])
     end
   end
 end
