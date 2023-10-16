@@ -21,7 +21,7 @@
           <% end %>
           </div>
         </td>
-        <td><span class = "font-small"><%= user.name %></span></td>
+        <td><span class = "font-small"><%= link_to user.name, user %></span></td>
         <td>フォロー数: <%= user.followings.count %></td>
         <td>フォロワー数: <%= user.followers.count %></td>
         <td>
