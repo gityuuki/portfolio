@@ -58,3 +58,4 @@ class RecruitmentsController < ApplicationController
     end
   end
 end
+
