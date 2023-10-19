@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update]
 
   def show
@@ -33,7 +33,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
     @user.update(is_withdrawal: true)
     # reset_session
-      flash[:notice] = "退会完了いたしました。"
+    sign_out @user unless current_user.is_admin?
+    flash[:notice] = "退会完了いたしました。"
     redirect_to users_path
   end
 

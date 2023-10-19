@@ -41,9 +41,17 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
-  
+
   def is_guest?
     email == "guest@example.com"
+  end
+
+  def active_for_authentication? # アカウント凍結のログイン分岐
+    super && (is_withdrawal == false)
+  end
+
+  def inactive_message # アカウント凍結時のエラーメッセージ
+    !is_withdrawal ? super : :locked
   end
 
   def self.looks(search, word)
