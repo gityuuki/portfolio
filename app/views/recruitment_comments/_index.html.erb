@@ -14,7 +14,7 @@
           </div></td>
         <td class = "col-60px">
           <% if (recruitment_comment.user == current_user || current_user.is_admin?) %>
-            <%= link_to "削除", recruitment_recruitment_comment_path(recruitment, recruitment_comment), method: :delete, class: "btn btn-danger pull-right btn-sm" %>
+            <%= link_to "削除", recruitment_recruitment_comment_path(recruitment, recruitment_comment), method: :delete, class: "btn btn-danger pull-right btn-sm", data: { confirm: "【確認】コメントを削除してもよろしいですか？" } %>
           <% end %>
         </td>
       </tr>
