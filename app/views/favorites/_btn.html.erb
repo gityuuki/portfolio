@@ -1,10 +1,10 @@
 <% if recruitment.favorited_by?(current_user) %>
-  <%= link_to recruitment_favorites_path(recruitment), method: :delete,  style: "color: red;" do %>
+  <%= link_to recruitment_favorites_path(recruitment), method: :delete,remote: true, style: "color: red;" do %>
     <i class="fas fa-heart" aria-hidden="true"></i>
     <%= recruitment.favorites.count %>
   <% end %>
 <% else %>
-  <%= link_to recruitment_favorites_path(recruitment), method: :post do %>
+  <%= link_to recruitment_favorites_path(recruitment), method: :post,remote: true do %>
     <i class="fas fa-heart" aria-hidden="true"></i>
     <%= recruitment.favorites.count %>
   <% end %>

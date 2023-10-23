@@ -16,7 +16,7 @@
         </td>
         <td><%= link_to recruitment.title,recruitment, class: "recruitment_#{recruitment.id}" %></td>
         <td><%= recruitment.body %></td>
-        <td><%= render "favorites/btn", recruitment: recruitment %></td>
+        <td id="favorite-btn-<%=recruitment.id %>"><%= render "favorites/btn", recruitment: recruitment %></td>
         <td>コメント数: <%= recruitment.recruitment_comments.count %></td>
         <td><small><%= recruitment.created_at.in_time_zone("Tokyo").strftime("%Y/%m/%d %H:%M") %></small></td>
         <% if current_user.is_admin? %>
