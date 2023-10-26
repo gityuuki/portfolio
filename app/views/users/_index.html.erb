@@ -24,14 +24,8 @@
         <td><span class = "font-small"><%= link_to user.name, user %></span></td>
         <td>フォロー数: <%= user.followings.count %></td>
         <td>フォロワー数: <%= user.followers.count %></td>
-        <td>
-          <% if current_user != user%>
-            <% if current_user.following?(user) %>
-              <%= link_to "フォローを外す", user_relationships_path(user.id), method: :delete, class: "btn btn-danger pull-right btn-sm" %>
-            <% else %>
-              <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn btn-primary pull-right btn-sm" %>
-            <% end %>
-          <% end %>
+        <td id="relationships-btn-<%= user.id %>">
+          <%= render "relationships/btn", user: user%>
         </td>
         <td><%= link_to '詳細ページ', user, class: "user_#{user.id}", class: "btn btn-success pull-right btn-sm" %></td>
         <% if current_user.is_admin? && !user.is_admin && !user.is_guest? %>
