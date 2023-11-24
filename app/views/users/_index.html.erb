@@ -21,15 +21,15 @@
         <!--  <% end %>-->
         <!--  </div>-->
         <!--</td>-->
-        <td><span class = "font-small"><%= link_to user.name, user %></span></td>
+        <td><span class="font-small"><%= link_to user.name, user %></span></td>
         <td>フォロー数: <%= user.followings.count %></td>
         <td>フォロワー数: <%= user.followers.count %></td>
         <td id="relationships-btn-<%= user.id %>">
-          <%= render "relationships/btn", user: user%>
+          <%= render "relationships/btn", user: user %>
         </td>
-        <td><%= link_to '詳細ページ', user, class: "user_#{user.id}", class: "btn btn-success pull-right btn-sm" %></td>
+        <td><%= link_to '詳細ページ', user, class: "user_#{user.id} btn btn-success pull-right btn-sm" %></td>
         <% if current_user.is_admin? && !user.is_admin && !user.is_guest? %>
-         <td><%= link_to '退会ボタン', withdrawal_path(user.id), method: :post, class: "user_#{user.id}", class: "btn btn-danger pull-right btn-sm", data: { confirm: "【確認】アカウントを削除してもよろしいですか？" } %></td>
+          <td><%= link_to '退会ボタン', withdrawal_path(user.id), method: :post, class: "user_#{user.id} btn btn-danger pull-right btn-sm", data: { confirm: "&#8203;``【oaicite:0】``&#8203;アカウントを削除してもよろしいですか？" } %></td>
         <% end %>
       </tr>
     <% end %>
